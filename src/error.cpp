@@ -60,5 +60,49 @@ void Error::check(ErrorType etype) {
     default:
         break;
     }
+    handle_error(etype);
 }
 
+int Error::handle_error(ErrorType etype) {
+    switch (etype)
+    {
+    case ErrorType::SetSocketAddrError:
+        // TODO
+        exit(-1);
+        break;
+    
+    case ErrorType::BindError:
+        // TODO
+        exit(-1);
+        break;
+    
+    case ErrorType::ListenError:
+        // TODO
+        exit(-1);
+        break;
+    
+    case ErrorType::ConnectError:
+        // TODO
+        exit(-1);
+        break;
+
+    case ErrorType::AcceptError:
+        // TODO
+        exit(-1);
+        break;
+    
+    case ErrorType::SocketReadError:
+        // TODO
+        exit(-1);
+        break;
+    
+    case ErrorType::SocketWriteError:
+        // TODO
+        exit(-1);
+        break;
+    
+    default:
+        break;
+    }
+    return 0;
+}

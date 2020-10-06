@@ -21,6 +21,7 @@ client:
 build: server client
 
 run: build
+	@echo 'runing server...'
 	@$(server)
 	
 clean:

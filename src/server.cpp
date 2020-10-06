@@ -23,10 +23,10 @@ int main() {
     html_list.push_back(h_riscv);
     html_list.push_back(h_404);
     // Create a new socket
-    int sockfd_id_1 = s.new_socket(AF_INET, SOCK_STREAM, 0);
+    int sockfd_id_1 = s.new_socket(AF_LISTENED, SOCK_STREAM, 0);
 
     // Setup the host_addr structure
-    e.check(s.set_addr(sockfd_id_1, AF_INET, htonl(INADDR_ANY), PORT));
+    e.check(s.set_addr(sockfd_id_1, AF_LISTENED, htonl(INADDR_ANY), PORT));
 
     // Bind socket and the address structure
     e.check(s.sbind(sockfd_id_1));

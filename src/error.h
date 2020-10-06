@@ -23,5 +23,6 @@ public:
     Error();
     ~Error();
     void check(ErrorType etype);
+    int handle_error(ErrorType etype);
 };
 
