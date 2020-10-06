@@ -22,5 +22,6 @@ build: server client
 
 run: build
 	@$(server)
+	
 clean:
 	@rm $(target_path)/*
