@@ -14,7 +14,7 @@ Only socket library in linux.
 
 ## Run Server and Client
 First:  
->\$ make build
+>\$ make build  
 
 One terminal:  
 >\$ ./target/server
