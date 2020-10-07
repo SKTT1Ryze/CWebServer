@@ -84,9 +84,9 @@ ErrorType Socket::saccept(int index, int * new_sockfd_index) {
     sockaddr_in new_socket_addr;
     memset(&new_socket_addr, 0, sizeof(new_socket_addr));
     socklen_t new_socket_addr_len = sizeof(new_socket_addr);
-
+    
+    std::cout << "Sockfd: " << sockfds[index] << std::endl;
     int accept_result = accept(sockfds[index], (sockaddr *)&new_socket_addr, &new_socket_addr_len);
-
     if (accept_result < 0) return ErrorType::AcceptError;
     sockfds.push_back(accept_result);
     socket_addrs.push_back(new_socket_addr);

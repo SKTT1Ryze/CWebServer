@@ -21,6 +21,7 @@ private:
     std::vector<int> sockfds;
     std::vector<sockaddr_in> socket_addrs;
 public:
+    
     int sockfd_num;
     Socket();
     ~Socket();
