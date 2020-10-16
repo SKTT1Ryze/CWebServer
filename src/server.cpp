@@ -1,8 +1,8 @@
 // Implementation of Server
 
-#include "read_html.h"
+#include "readfile.h"
 #include "socket.h"
-#include "request_prase.h"
+#include "prase.h"
 
 #define _BSD_SOURCE
 
@@ -74,7 +74,7 @@ int main() {
     
     std::cout << std::endl;
 
-    read_html(html_list[render_html_index].c_str(), html_context + sizeof(HTTP_HEAD) - 1);
+    read_file(html_list[render_html_index].c_str(), html_context + sizeof(HTTP_HEAD) - 1);
 
     std::cout << "Read html context:\n" << html_context << std::endl;
 

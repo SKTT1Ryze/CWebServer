@@ -73,7 +73,7 @@ ErrorType Socket::sconnect(int index) {
     if (index < 0 || index >= sockfd_num) return ErrorType::ConnectError;
     
     int connect_result = connect(sockfds[index], (sockaddr *)&socket_addrs[index], sizeof(socket_addrs[index]));
-    std::cout << "run here." << std::endl;
+    
     if (connect_result < 0) return ErrorType::ConnectError;
     return ErrorType::None;
 }
@@ -85,7 +85,6 @@ ErrorType Socket::saccept(int index, int * new_sockfd_index) {
     memset(&new_socket_addr, 0, sizeof(new_socket_addr));
     socklen_t new_socket_addr_len = sizeof(new_socket_addr);
     
-    std::cout << "Sockfd: " << sockfds[index] << std::endl;
     int accept_result = accept(sockfds[index], (sockaddr *)&new_socket_addr, &new_socket_addr_len);
     if (accept_result < 0) return ErrorType::AcceptError;
     sockfds.push_back(accept_result);

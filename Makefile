@@ -10,7 +10,7 @@ client_src	:= ${source_path}/client.cpp
 socket		:= $(source_path)/socket.cpp
 error		:= ${source_path}/error.cpp
 tp_test_src	:= $(source_path)/threadpool_test.cpp
-tpserver_src:= $(source_path)/tp_server_x.cpp
+tpserver_src:= $(source_path)/tp_server.cpp
 server		:= ${target_path}/server
 client		:= $(target_path)/client
 tp_test		:= $(target_path)/tp_test
@@ -32,7 +32,7 @@ build: server client tp_test tp_server
 
 run: build
 	@echo 'runing server...'
-	@$(server)
+	@$(tp_server)
 	
 clean:
 	@rm $(target_path)/*
