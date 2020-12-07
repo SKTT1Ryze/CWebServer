@@ -35,7 +35,15 @@ Linux 发行版 Manjaro 系统
 ### 代码层次结构
 本项目基于 Linux Socket 库实现了一个多线程的 Web 服务器，主要通过 C++ 类对 Socket 套接字相关逻辑进行封装以对程序中多次创建的 Socket 套接字进行统一的管理和调度，并在 main 函数里面调用这个 Socket 类和另外一些子模块来构建整个项目。  
 代码层次结构图如下：  
-[这里放结构图]  
+```mermaid
+graph TD;
+    Linux-Socket-库-->Socket-类;
+    ThreadPool-->线程池;
+    String/Vector-->http报文解析;
+    Socket-类-->多线程Web-Server;
+    线程池-->多线程Web-Server;
+    http报文解析-->多线程Web-Server;
+```
 
 ### 类的封装
 一开始写这个项目的时候，在网上看了几个 Socket 编程的例子，在大概理解这些代码的思路之后，发现它们非常缺乏整洁性和规范性，通常是在一个 main 函数里面创建好几个 Socket 套接字，而程序对这些套接字没有一个统一的管理。  
